@@ -1,1 +1,2 @@
-#!/bin/sh -x
+#!/bin/bash -x
+pwd
