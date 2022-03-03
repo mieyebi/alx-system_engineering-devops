@@ -1,0 +1,4 @@
+#!/bin/bash -x
+mktemp -d -t my_first_directory
+cd tmp
+mkdir my_first_directory 
