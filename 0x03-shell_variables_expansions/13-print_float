@@ -1,2 +1,2 @@
 #!/bin/bash
-NUM=9.1567 | echo printf('%.2f' $NUM) 
+echo printf('%.2f' $NUM) 
