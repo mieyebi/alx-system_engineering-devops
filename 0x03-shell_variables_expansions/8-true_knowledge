@@ -1,0 +1,2 @@
+#!/bin/bash
+TRUEKNOWLEDGE="43" | echo $((128+$TRUEKNOWLEDGE))
