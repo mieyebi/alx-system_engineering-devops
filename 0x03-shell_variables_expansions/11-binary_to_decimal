@@ -1,2 +1,3 @@
 #!/bin/bash
 BINARY=$(([100#]2)) | echo $(([$BINARY#]10))
+echo 'obase=2; ibase=10; 123' | bc
