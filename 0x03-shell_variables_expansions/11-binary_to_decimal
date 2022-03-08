@@ -1,2 +1,2 @@
 #!/bin/bash
-BINARY=11011 | echo $(printf"%d" $BINARY) 
+BINARY=11011 | echo [$BINARY#]10 
