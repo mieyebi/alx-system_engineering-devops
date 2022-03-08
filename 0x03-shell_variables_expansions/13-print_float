@@ -1,2 +1,2 @@
 #!/bin/bash
-NUM=9 | printf"%.2f" $NUM 
+NUM=9.1567 | printf("%.2f", $NUM) 
