@@ -1,2 +1,2 @@
 #!/bin/bash
-BINARY=11011 | echo "ibase=2 $BINARY" | bc
+BINARY=11011 | echo %d $BINARY 
