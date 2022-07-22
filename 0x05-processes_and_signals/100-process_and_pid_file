@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#signal and processes
+FILE="/var/runmyscript.pid"
+
+function inputt()
+{
+	rm -rf $FILE
+	if $1;
+	then
+		echo "I hate the kill command"
+	fi
+	exit
+}
+
+echo "$$" > $FILE
+
+trap inputt "true" SIGTERM
+trap inputt "false" SIGQUIT
+trap 'echo "Y U no love me?|"' SIGINT
+
+while true;
+do
+	echo "To infinity and beyond"
+done
