@@ -4,19 +4,14 @@ a=1
 while ((a<=20))
 do
 	echo $a
+	case $a in
+	4)
+		printf "bad luck from China\n";;
+	9)
+		printf "bad luck from Japan\n";;
+	17)
+		printf "bad luck from italy\n";;
+	esac
 	((a++))
-	if ((a==4))
-	then
-		echo $a
-		printf "bad luck from China"
-	elif ((a==9))
-	then
-		echo $a
-		printf "bad luck from Japan"
-	elif ((a==17))
-	then
-		echo $a
-		printf "bad luck from italy"
-	fi
 	
 done
