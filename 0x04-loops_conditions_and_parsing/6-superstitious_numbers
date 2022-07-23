@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#A script that displays superstitious numbers
+a=1
+while ((a<=20))
+do
+	echo $a
+	((a++))
+	if ((a==4))
+	then
+		echo $a
+		printf "bad luck from China"
+	elif ((a==9))
+	then
+		echo $a
+		printf "bad luck from Japan"
+	elif ((a==17))
+	then
+		echo $a
+		printf "bad luck from italy"
+	fi
+	
+done
