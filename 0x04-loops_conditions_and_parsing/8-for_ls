@@ -2,5 +2,5 @@
 #A bash script tha displays the content of the directory in a list
 for a in *
 do
-	echo $a | cut -d "-" -f2
+	echo "$a" | cut -d "-" -f2
 done
