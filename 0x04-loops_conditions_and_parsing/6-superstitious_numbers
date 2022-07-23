@@ -3,15 +3,14 @@
 a=1
 while ((a<=20))
 do
-	echo $a
+	echo "$a"
 	case $a in
 	4)
-		printf "bad luck from China\n";;
+		echo "bad luck from China";;
 	9)
-		printf "bad luck from Japan\n";;
+		echo "bad luck from Japan";;
 	17)
-		printf "bad luck from italy\n";;
+		echo "bad luck from italy";;
 	esac
-	((a++))
-	
+	((a++))	
 done
