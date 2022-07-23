@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#A bash script that loops from 1 to 10
+a=0
+while ((a<10))
+do
+	if ((a==3))
+	then
+		printf "bad luck\n"
+	elif ((a==7))
+	then
+		printf "good luck\n"
+	else 
+		printf "Best School\n"
+	fi
+	((a++))
+
+done
