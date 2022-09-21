@@ -7,4 +7,8 @@ sudo ufw allow 'Nginx HTTP'
 sudo mkdir -p /var/www/html
 sudo chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
-service nginx restart
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+  service nginx restart
+else
+  service nginx restart
+fi
