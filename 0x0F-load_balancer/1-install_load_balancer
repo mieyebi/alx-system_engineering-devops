@@ -2,21 +2,24 @@
 #installing a load balancer
 
 sudo apt-get -y update
-sudo apt-get install --no-install-recommends software-properties-common
-sudo add-apt-repository ppa:vbernat/haproxy-2.6
-sudo apt-get install haproxy=2.6.\*
-sudo chown  $USER:$USER /etc/haproxy/haproxy.cfg
+sudo apt-get -y install haproxy
+echo "ENABLED=1" > haproxy
+sudo mv haproxy /etc/default/haproxy
 
-echo "
-frontend
-    bind *:80
-    mode http
-    default_backend web-backend
 
-backend web-backend
-    balance roundrobin
-    server 7765-web-01 34.239.169.253:80 check
-    server 7765-web-02 34.239.162.165:80 check
-    option httpchk" >> /etc/haproxy/haproxy.cfg
+isBackEndSet=$( grep 'backend web-backend' < /etc/haproxy/haproxy.cfg )
+if [ ! "$isBackEndSet" ]
+then
+block="\nbackend web-backend\n\tbalance roundrobin\n\t\
+server sv1 100.25.39.211:80 check\n\tserver sv2 100.26.180.73:80 check"
+echo -e "$block" >> /etc/haproxy/haproxy.cfg
+fi
+
+isFrontEndSet=$( grep 'frontend http' < /etc/haproxy/haproxy.cfg )
+if [ ! "$isFrontEndSet" ]
+then
+block="\nfrontend http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend"
+echo -e "$block" >> /etc/haproxy/haproxy.cfg
+fi
 
 sudo service haproxy restart
